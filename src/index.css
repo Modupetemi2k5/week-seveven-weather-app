@@ -1,0 +1,65 @@
+body {
+  background-color: #f9f7fe;
+  font-family: "Open Sans", sans-serif;
+  font-family: "PT Sans", sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.weather-app {
+  background-color: #ffffff;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px 30px;
+}
+
+.search-input {
+  width: 400px;
+  padding: 15px;
+  background-color: #f9f7fe;
+  border: none;
+  border-radius: 10px;
+}
+
+.submit-input {
+  width: 80px;
+  padding: 12px;
+  background-color: #885df1;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
+.city {
+  display: flex;
+  justify-content: space-between;
+}
+
+.temp {
+  font-size: 80px;
+}
+
+.cloud {
+  font-size: 50px;
+  margin-top: 15px;
+}
+
+.degree {
+  font-size: 50px;
+  position: relative;
+  bottom: 0px;
+}
+
+.figure {
+  color: red;
+}
+
+.parameters {
+  display: flex;
+}
+
+a {
+  color: #885df1;
+}
