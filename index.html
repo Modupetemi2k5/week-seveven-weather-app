@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="src/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body></body>
@@ -16,13 +16,14 @@
 
     <header>
         <form class="form-input">
-            <input type="text" placeholder="Enter a city" class="search-input" />
-            <input type="submit" value="search" class="submit-input" />
+            <input type="text" placeholder="Enter a city" class="search-input" id="searchform-input" />
+            <input type="submit" value="search" class="submit-input " id="submitform-input" />
         </form>
     </header>
     <main>
         <div class="city">
-            <h1>paris </h1>
+
+            <h1 id="place">paris </h1>
             <div class="parameters"> <span class="cloud"> 🌧</span>
                 <span class="temp">2</span>
                 <span class="degree"> ºc</span>
@@ -38,11 +39,10 @@
     <footer>
         this proect was coded by
         <a href="https://github.com/Modupetemi2k5">modupe</a> is open source on
-        <a href="https://github.com/Modupetemi2k5/week-seveven-weather-app">Github</a
-      >and hosted
-      <a href="https://app.netlify.com/sites/weather-app-week-7/overview"
-        >netlify</a
-      >
-    </footer></div><script src=""></script>
-  </body>
+        <a href="https://github.com/Modupetemi2k5/week-seveven-weather-app">Github</a >and hosted
+      <a href="https://app.netlify.com/sites/weather-app-week-7/overview">netlify</a> </footer>
+</div>
+<script src="src/index.js"></script>
+</body>
+
 </html>
