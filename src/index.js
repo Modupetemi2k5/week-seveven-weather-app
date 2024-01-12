@@ -11,8 +11,8 @@ function search(event) {
   let searchInputValue = searchInput.value;
   let h1 = document.querySelector("#place");
   h1.innerHTML = searchInputValue;
-  let apikey = "03 c85048t924o90fc221bd5189a06dda ";
-  let apiUrl = ` https: //api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&unit=metric`;
+  let apikey = "fbef01f4et1b02o0d25c27210a43ef3f";
+  let apiUrl = ` https: //api.shecodes.io/weather/v1/current?query=${searchInputValue}&key=${apikey}&unit=metric`;
 
   axios.get(apiUrl).then(displayWeather);
 }
