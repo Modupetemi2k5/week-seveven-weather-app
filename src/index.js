@@ -10,6 +10,25 @@ function displayWeather(response) {
   cloudElement.innerHTML = `<img src = "${response.data.condition.icon_url}"`;
 }
 
+function fornatDate() {
+  date = new date();
+  days = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+  ];
+  let hour = date.getHour();
+  let day = days[date.getDay];
+  let minute = date.getMinute;
+
+  if (minute < 10) minute = ` 0${minute}`;
+  return `${day}${hour}${minute}`;
+}
+
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#searchform-input");
@@ -19,8 +38,7 @@ function search(event) {
   h1.innerHTML = searchInputValue;
   let apikey = "fbef01f4et1b02o0d25c27210a43ef3f";
 
-  let apiUrl = `
-    https: //api.shecodes.io/weather/v1/current?query=${searchInputValue}&key=${apikey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInputValue}&key=${apikey}`;
   axios.get(apiUrl).then(displayWeather);
 }
 let form = document.querySelector(".form-input");
