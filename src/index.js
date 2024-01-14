@@ -2,12 +2,12 @@ function displayWeather(response) {
   console.log(response.data);
   let tempElement = document.querySelector(".temp");
   tempElement.innerHTML = Math.round(response.data.temperature.current);
-  windElement = document.querySelector("#wind");
+  let windElement = document.querySelector("#wind");
   windElement.innerHTML = response.data.wind.speed;
-  humidityElement = document.querySelector("#humidity");
+  let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
-  iconElement = document.querySelector("#icon");
-  iconElement.innerHTML = `< img src = "${response.data.conditon.icon_url}"/> `;
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = `< img src = "${response.data.conditon.icon_url}"/>`;
   let timeElement = document.querySelector("#time");
   timeElement.innerHTML = formatDate(date);
 }
