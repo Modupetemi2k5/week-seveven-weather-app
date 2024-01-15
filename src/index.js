@@ -7,12 +7,14 @@ function displayWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
   let iconElement = document.querySelector("#icon");
-  iconElement.innerHTML = `< img src = "${response.data.conditon.icon_url}">`;
+  iconElement.innerHTML = `<img src="${response.data.conditon.icon_url}"alt="weather Icon">`;
   let timeElement = document.querySelector("#time");
-  timeElement.innerHTML = formatDate(date);
+  timeElement.innerHTML = formatDate(new Date(2024 - 1 - 15));
 }
 
 function formatDate(date) {
+  let minute = date.getMinutes();
+  let hour = date.getHours();
   let days = [
     "sunday",
     "monday",
@@ -22,12 +24,13 @@ function formatDate(date) {
     "friday",
     "saturday",
   ];
-  let hour = date.getHours();
+
   let day = days[date.getDay()];
-  let minute = date.getMinutes();
+
   if (minute < 10) {
     minute = `0 ${minute}`;
   }
+
   return `${day}${hour}:${minute}`;
 }
 
@@ -43,5 +46,6 @@ function search(event) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInputValue}&key=${apikey}`;
   axios.get(apiUrl).then(displayWeather);
 }
+
 let form = document.querySelector(".form-input");
 form.addEventListener("submit", search);
