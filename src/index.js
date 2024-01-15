@@ -7,7 +7,7 @@ function displayWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
   let iconElement = document.querySelector("#icon");
-  iconElement.innerHTML = `<img src="${response.data.conditon.icon_url}"alt="weather Icon">`;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}"alt="weather Icon"class="cloud">`;
   let timeElement = document.querySelector("#time");
   timeElement.innerHTML = formatDate(new Date(2024 - 1 - 15));
 }
