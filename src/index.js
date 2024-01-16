@@ -9,7 +9,7 @@ function displayWeather(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}"alt="weather Icon"class="cloud">`;
   let timeElement = document.querySelector("#time");
-  timeElement.innerHTML = formatDate(new Date(2024 - 1 - 15));
+  timeElement.innerHTML = formatDate(new Date());
 }
 
 function formatDate(date) {
@@ -28,9 +28,11 @@ function formatDate(date) {
   let day = days[date.getDay()];
 
   if (minute < 10) {
-    minute = `0 ${minute}`;
+    minute = `0${minute}`;
   }
-
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   return `${day}${hour}:${minute}`;
 }
 
@@ -43,7 +45,8 @@ function search(event) {
   h1.innerHTML = searchInputValue;
   let apikey = "bd79ao40tde3dec118ca46bc3e6dd55f";
 
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInputValue}&key=${apikey}`;
+  let apiUrl = `
+        https://api.shecodes.io/weather/v1/current?query=${searchInputValue}&key=${apikey}`;
   axios.get(apiUrl).then(displayWeather);
 }
 
